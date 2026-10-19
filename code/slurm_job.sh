@@ -2,8 +2,8 @@
 # Runs every benchmark of Part 1 and Part 2 on a single node, then builds tables and figures.
 # Submit from the code/ directory:  sbatch slurm_job.sh
 #SBATCH -A research
-#SBATCH --qos=medium
-#SBATCH -p long
+#SBATCH --qos=low
+#SBATCH -p u22-cpu
 #SBATCH -n 1
 #SBATCH -c 8
 #SBATCH --mem-per-cpu=2G
