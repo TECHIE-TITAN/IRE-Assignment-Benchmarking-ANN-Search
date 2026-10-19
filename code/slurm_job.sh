@@ -3,7 +3,7 @@
 # Submit from the code/ directory:  sbatch slurm_job.sh
 #SBATCH -A research
 #SBATCH --qos=low
-#SBATCH -p u22-cpu
+#SBATCH -p u22
 #SBATCH -n 1
 #SBATCH -c 8
 #SBATCH --mem-per-cpu=2G
