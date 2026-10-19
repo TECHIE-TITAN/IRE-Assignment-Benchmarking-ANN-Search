@@ -12,6 +12,14 @@ PACKAGES = ["faiss-cpu", "hnswlib", "numpy", "h5py", "pandas", "matplotlib", "py
 
 
 def cpu_name():
+    if sys.platform.startswith("linux"):
+        try:
+            with open("/proc/cpuinfo") as f:
+                for line in f:
+                    if line.startswith("model name"):
+                        return line.split(":", 1)[1].strip()
+        except OSError:
+            pass
     if sys.platform == "darwin":
         try:
             return subprocess.check_output(
@@ -41,6 +49,9 @@ def collect():
         "os": platform.platform(),
         "cpu": cpu_name(),
         "logical_cores": os.cpu_count(),
+        "cpus_available_to_job": (len(os.sched_getaffinity(0))
+                                  if hasattr(os, "sched_getaffinity") else None),
+        "slurm_node": os.environ.get("SLURMD_NODENAME"),
         "ram_gb": ram_gb(),
         "python": platform.python_version(),
         "packages": {name: package_version(name) for name in PACKAGES},
