@@ -1,0 +1,10 @@
+data/
+indexes/
+*.index
+*.hdf5
+*.h5
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,7 @@
+faiss-cpu
+hnswlib
+numpy
+h5py
+pandas
+matplotlib
+pytest
