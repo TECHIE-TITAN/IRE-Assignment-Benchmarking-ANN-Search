@@ -5,7 +5,8 @@ import platform
 import subprocess
 import sys
 from importlib import metadata
-from pathlib import Path
+
+from results_log import RESULTS_DIR
 
 PACKAGES = ["faiss-cpu", "hnswlib", "numpy", "h5py", "pandas", "matplotlib", "pytest"]
 
@@ -47,7 +48,7 @@ def collect():
 
 
 def main():
-    out = Path(__file__).resolve().parent.parent / "results" / "env.json"
+    out = RESULTS_DIR / "env.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     info = collect()
     out.write_text(json.dumps(info, indent=2) + "\n")

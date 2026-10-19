@@ -1,0 +1,7 @@
+timestamp,experiment,dataset,n_vectors,split,index,build_params,search_params,mode,recall_at_10,qps,build_time_s,index_bytes,bytes_per_vector,notes
+2026-10-19T17:56:02,part1,sift,1000000,final,exact,IndexFlatL2,,single,1.0,99.34,0.0978,512000000,512.0,"1 thread, one query per call"
+2026-10-19T17:56:02,part1,sift,1000000,final,exact,IndexFlatL2,,batch,1.0,1483.39,0.0978,512000000,512.0,"1 thread, all queries in one call"
+2026-10-19T17:56:02,part1,sift,1000000,final,exact,IndexFlatL2,,batch,1.0,2396.17,0.0978,512000000,512.0,"8 threads, all queries in one call"
+2026-10-19T18:00:57,part1,glove,1183514,final,exact,IndexFlatL2,,single,1.0,56.11,0.0767,473405600,400.0,"1 thread, one query per call"
+2026-10-19T18:00:57,part1,glove,1183514,final,exact,IndexFlatL2,,batch,1.0,948.31,0.0767,473405600,400.0,"1 thread, all queries in one call"
+2026-10-19T18:00:57,part1,glove,1183514,final,exact,IndexFlatL2,,batch,1.0,1546.22,0.0767,473405600,400.0,"8 threads, all queries in one call"

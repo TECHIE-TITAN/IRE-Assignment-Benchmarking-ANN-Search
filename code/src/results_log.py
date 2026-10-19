@@ -1,9 +1,15 @@
-"""Append one row per benchmark run to results/results.csv."""
+"""Append one row per benchmark run to results/results.csv.
+
+results/ lives next to code/ (not inside it), matching the submission layout:
+    <root>/code/src/results_log.py  ->  <root>/results/
+"""
 import csv
 from datetime import datetime
 from pathlib import Path
 
-RESULTS_CSV = Path(__file__).resolve().parent.parent / "results" / "results.csv"
+RESULTS_DIR = Path(__file__).resolve().parent.parent.parent / "results"
+FIGURES_DIR = RESULTS_DIR / "figures"
+RESULTS_CSV = RESULTS_DIR / "results.csv"
 
 COLUMNS = [
     "timestamp",
