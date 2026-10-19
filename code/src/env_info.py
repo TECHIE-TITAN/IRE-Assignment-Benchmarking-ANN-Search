@@ -8,7 +8,7 @@ from importlib import metadata
 
 from results_log import RESULTS_DIR
 
-PACKAGES = ["faiss-cpu", "hnswlib", "numpy", "h5py", "pandas", "matplotlib", "pytest"]
+PACKAGES = ["faiss-cpu", "numpy", "h5py", "pandas", "matplotlib", "pytest"]
 
 
 def cpu_name():

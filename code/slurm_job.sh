@@ -13,7 +13,6 @@
 set -euo pipefail
 cd "$SLURM_SUBMIT_DIR"
 
-module load u18/python/3.10.2
 source .venv/bin/activate
 
 # builds and batch searches use the CPUs allocated to this job; timing runs are forced to 1 thread in code
