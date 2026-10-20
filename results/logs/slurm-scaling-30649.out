@@ -1,0 +1,189 @@
+gnode007
+{
+  "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+  "cpu": "Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz",
+  "logical_cores": 40,
+  "cpus_available_to_job": 8,
+  "slurm_node": "gnode007",
+  "ram_gb": 135.0,
+  "python": "3.10.12",
+  "packages": {
+    "faiss-cpu": "1.13.0",
+    "numpy": "2.0.2",
+    "h5py": "3.14.0",
+    "pandas": "2.3.3",
+    "matplotlib": "3.9.4",
+    "pytest": "8.4.2"
+  }
+}
+
+Wrote /home2/vansh.goyal/IRE-Assignment-Benchmarking-ANN-Search/results/env.json
+
+=== sift ===
+subset run: stored neighbours not valid, skipping agreement check
+exact recall@10 on final queries: 1.000000
+  1 thread, one query per call                      258.5 QPS (3.869 ms/query)
+  1 thread, all queries in one call                2575.3 QPS (0.388 ms/query)
+  8 threads, all queries in one call               2483.1 QPS (0.403 ms/query)
+
+##### sift: n=100000 d=128 split=final queries=5000 timed=5000
+
+[hnsw] M=8;efConstruction=200  build=4.9s size=59.3MB
+  efSearch=10    recall=0.7268 qps=  28916.4
+  efSearch=16    recall=0.8202 qps=  23373.6
+  efSearch=24    recall=0.8864 qps=  18665.3
+  efSearch=32    recall=0.9222 qps=  15688.3
+  efSearch=48    recall=0.9571 qps=  11979.9
+  efSearch=64    recall=0.9736 qps=   9786.5
+  efSearch=96    recall=0.9875 qps=   7166.0
+  efSearch=128   recall=0.9932 qps=   5628.3
+  best recall for this build: 0.9932
+
+[hnsw] M=16;efConstruction=200  build=5.3s size=65.6MB
+  efSearch=10    recall=0.8070 qps=  23555.6
+  efSearch=16    recall=0.8852 qps=  18809.3
+  efSearch=24    recall=0.9359 qps=  14902.2
+  efSearch=32    recall=0.9610 qps=  12432.2
+  efSearch=48    recall=0.9818 qps=   9332.5
+  efSearch=64    recall=0.9903 qps=   7595.7
+  best recall for this build: 0.9903
+
+[hnsw] M=32;efConstruction=200  build=5.7s size=78.4MB
+  efSearch=10    recall=0.8428 qps=  20322.9
+  efSearch=16    recall=0.9133 qps=  16116.1
+  efSearch=24    recall=0.9536 qps=  12696.9
+  efSearch=32    recall=0.9728 qps=  10564.6
+  efSearch=48    recall=0.9890 qps=   7880.1
+  efSearch=64    recall=0.9945 qps=   6410.8
+  best recall for this build: 0.9945
+
+[ivfflat] nlist=256  build=1.0s size=52.1MB
+  nprobe=1     recall=0.4311 qps=  30553.8
+  nprobe=2     recall=0.6113 qps=  21932.2
+  nprobe=4     recall=0.7815 qps=  13921.7
+  nprobe=8     recall=0.9055 qps=   8074.9
+  nprobe=16    recall=0.9725 qps=   4422.2
+  nprobe=32    recall=0.9964 qps=   2298.5
+  best recall for this build: 0.9964
+
+[ivfflat] nlist=512  build=2.3s size=52.3MB
+  nprobe=1     recall=0.3751 qps=  31630.4
+  nprobe=2     recall=0.5444 qps=  25794.0
+  nprobe=4     recall=0.7112 qps=  18935.1
+  nprobe=8     recall=0.8490 qps=  12473.8
+  nprobe=16    recall=0.9420 qps=   7467.1
+  nprobe=32    recall=0.9853 qps=   4175.8
+  nprobe=64    recall=0.9982 qps=   2220.8
+  best recall for this build: 0.9982
+
+[ivfflat] nlist=1024  build=4.2s size=52.5MB
+  nprobe=1     recall=0.3225 qps=  20640.8
+  nprobe=2     recall=0.4787 qps=  23271.5
+  nprobe=4     recall=0.6416 qps=  19609.3
+  nprobe=8     recall=0.7867 qps=  15109.9
+  nprobe=16    recall=0.8987 qps=  10468.4
+  nprobe=32    recall=0.9652 qps=   6484.3
+  nprobe=64    recall=0.9932 qps=   3694.3
+  best recall for this build: 0.9932
+
+=== sift ===
+subset run: stored neighbours not valid, skipping agreement check
+exact recall@10 on final queries: 1.000000
+  1 thread, one query per call                       86.4 QPS (11.577 ms/query)
+  1 thread, all queries in one call                 874.5 QPS (1.143 ms/query)
+  8 threads, all queries in one call                832.4 QPS (1.201 ms/query)
+
+##### sift: n=300000 d=128 split=final queries=5000 timed=5000
+
+[hnsw] M=8;efConstruction=200  build=21.1s size=177.8MB
+  efSearch=10    recall=0.6691 qps=  20382.2
+  efSearch=16    recall=0.7668 qps=  16729.7
+  efSearch=24    recall=0.8431 qps=  13661.9
+  efSearch=32    recall=0.8839 qps=  11603.4
+  efSearch=48    recall=0.9316 qps=   8950.1
+  efSearch=64    recall=0.9547 qps=   7286.1
+  efSearch=96    recall=0.9765 qps=   5393.9
+  efSearch=128   recall=0.9855 qps=   4278.8
+  efSearch=192   recall=0.9938 qps=   3060.8
+  best recall for this build: 0.9938
+
+[hnsw] M=16;efConstruction=200  build=25.8s size=196.9MB
+  efSearch=10    recall=0.7635 qps=  16377.6
+  efSearch=16    recall=0.8470 qps=  13247.2
+  efSearch=24    recall=0.9052 qps=  10619.7
+  efSearch=32    recall=0.9384 qps=   8904.6
+  efSearch=48    recall=0.9695 qps=   6749.0
+  efSearch=64    recall=0.9833 qps=   5472.1
+  efSearch=96    recall=0.9930 qps=   3988.8
+  best recall for this build: 0.9930
+
+[hnsw] M=32;efConstruction=200  build=29.4s size=235.2MB
+  efSearch=10    recall=0.8111 qps=  13735.3
+  efSearch=16    recall=0.8873 qps=  10886.4
+  efSearch=24    recall=0.9348 qps=   8677.6
+  efSearch=32    recall=0.9582 qps=   7233.1
+  efSearch=48    recall=0.9801 qps=   5476.2
+  efSearch=64    recall=0.9891 qps=   4414.7
+  efSearch=96    recall=0.9961 qps=   3232.4
+  best recall for this build: 0.9961
+
+[ivfflat] nlist=512  build=3.6s size=156.3MB
+  nprobe=1     recall=0.4089 qps=  20466.4
+  nprobe=2     recall=0.5825 qps=  13761.2
+  nprobe=4     recall=0.7460 qps=   8402.7
+  nprobe=8     recall=0.8755 qps=   4696.0
+  nprobe=16    recall=0.9562 qps=   2502.7
+  nprobe=32    recall=0.9889 qps=   1301.6
+  nprobe=64    recall=0.9986 qps=    658.2
+  best recall for this build: 0.9986
+
+[ivfflat] nlist=1024  build=11.9s size=156.5MB
+  nprobe=1     recall=0.3560 qps=  21311.3
+  nprobe=2     recall=0.5178 qps=  16945.2
+  nprobe=4     recall=0.6775 qps=  12027.8
+  nprobe=8     recall=0.8188 qps=   7644.5
+  nprobe=16    recall=0.9205 qps=   4454.3
+  nprobe=32    recall=0.9732 qps=   2425.3
+  nprobe=64    recall=0.9947 qps=   1270.1
+  best recall for this build: 0.9947
+
+[ivfflat] nlist=2048  build=24.4s size=157.1MB
+  nprobe=1     recall=0.3119 qps=  16832.8
+  nprobe=2     recall=0.4551 qps=  15083.0
+  nprobe=4     recall=0.6144 qps=  12580.7
+  nprobe=8     recall=0.7589 qps=   9473.1
+  nprobe=16    recall=0.8736 qps=   6382.7
+  nprobe=32    recall=0.9484 qps=   3875.4
+  nprobe=64    recall=0.9854 qps=   2175.6
+  nprobe=128   recall=0.9975 qps=   1179.3
+  best recall for this build: 0.9975
+Cost at recall@10 >= 0.95, one thread, one query per call (SIFT, final queries)
+
+| Index | ms/query @ 100K | ms/query @ 300K | ms/query @ 1000K | growth 300K vs 100K | growth 1000K vs 100K | scaling exponent |
+|---|---|---|---|---|---|---|
+| Exact (Flat) | 3.869 | 11.577 | 42.105 | 3.0x | 10.9x | 1.04 |
+| HNSW | 0.079 | 0.137 | 0.249 | 1.7x | 3.2x | 0.50 |
+| IVF-Flat | 0.154 | 0.400 | 0.840 | 2.6x | 5.4x | 0.74 |
+
+Speedup over exact search at the same size
+
+| Index | 100K | 300K | 1000K |
+|---|---|---|---|
+| HNSW | 49x | 84x | 169x |
+| IVF-Flat | 25x | 29x | 50x |
+
+Configuration, recall, build time and size behind each point
+
+| Index | n | Config | recall@10 | Build time (s) | Size (MB) |
+|---|---|---|---|---|---|
+| Exact (Flat) | 100,000 | IndexFlatL2; nan | 1.0000 | 0.1 | 51.2 |
+| Exact (Flat) | 300,000 | IndexFlatL2; nan | 1.0000 | 0.1 | 153.6 |
+| Exact (Flat) | 1,000,000 | IndexFlatL2; nan | 1.0000 | 0.5 | 512.0 |
+| HNSW | 100,000 | M=32;efConstruction=200; efSearch=24 | 0.9536 | 5.7 | 78.4 |
+| HNSW | 300,000 | M=8;efConstruction=200; efSearch=64 | 0.9547 | 21.1 | 177.8 |
+| HNSW | 1,000,000 | M=16;efConstruction=200; efSearch=48 | 0.9563 | 164.7 | 656.3 |
+| IVF-Flat | 100,000 | nlist=1024; nprobe=32 | 0.9652 | 4.2 | 52.5 |
+| IVF-Flat | 300,000 | nlist=512; nprobe=16 | 0.9562 | 3.6 | 156.3 |
+| IVF-Flat | 1,000,000 | nlist=2048; nprobe=32 | 0.9611 | 64.1 | 521.1 |
+
+wrote scaling_sift.png/.pdf
