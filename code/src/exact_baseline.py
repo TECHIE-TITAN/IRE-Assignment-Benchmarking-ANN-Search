@@ -26,6 +26,7 @@ def main():
     ap.add_argument("--datasets", nargs="+", default=["sift", "glove"])
     ap.add_argument("--n", type=int, default=None, help="use first N base vectors")
     ap.add_argument("--repeats", type=int, default=3)
+    ap.add_argument("--experiment", default="part1", help="label for the experiment column")
     args = ap.parse_args()
 
     max_threads = faiss.omp_get_max_threads()
@@ -62,7 +63,7 @@ def main():
             print("subset run: stored neighbours not valid, skipping agreement check")
 
         base_row = dict(
-            experiment="part1", dataset=name, n_vectors=n, split="final",
+            experiment=args.experiment, dataset=name, n_vectors=n, split="final",
             index="exact", build_params="IndexFlatL2", build_time_s=round(build_time, 4),
             index_bytes=index_bytes, bytes_per_vector=index_bytes / n,
         )

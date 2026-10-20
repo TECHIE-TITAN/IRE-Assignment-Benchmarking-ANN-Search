@@ -68,6 +68,8 @@ def main():
     ap.add_argument("--timing-queries", type=int, default=None,
                     help="time only the first T queries of the split (recall still uses all)")
     ap.add_argument("--grid", choices=["full", "small"], default="full")
+    ap.add_argument("--experiment", default=None,
+                    help="label for the experiment column (default: part2, or part2_tune)")
     args = ap.parse_args()
 
     max_threads = faiss.omp_get_max_threads()
@@ -76,6 +78,8 @@ def main():
         out_csv, experiment = DATA_DIR / "tuning.csv", "part2_tune"
     else:
         out_csv, experiment = RESULTS_CSV, "part2"
+    if args.experiment:
+        experiment = args.experiment
 
     for name in args.datasets:
         d = load_dataset(name, n=args.n)
