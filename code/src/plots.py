@@ -57,7 +57,7 @@ def plot_dataset(ds, part2, exact_qps):
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     ax.tick_params(colors=MUTED)
-    ax.legend(frameon=False, fontsize=9, loc="lower left")
+    ax.legend(frameon=False, fontsize=9, loc="upper right")
     fig.tight_layout()
 
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
