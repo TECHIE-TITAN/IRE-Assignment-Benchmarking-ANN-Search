@@ -43,6 +43,17 @@ def load_points(df):
     return points
 
 
+def label(n):
+    return f"{n // 1000}K" if n < 1_000_000 else "1M"
+
+
+def config(row):
+    params = [row.build_params]
+    if isinstance(row.search_params, str):
+        params.append(row.search_params)
+    return "; ".join(params)
+
+
 def cost_ms(row):
     return None if row is None else 1000.0 / row.qps
 
@@ -73,7 +84,7 @@ def main():
         for n in SIZES:
             p = points[(kind, n)]
             if p is not None:
-                detail.append([NAMES[kind], f"{n:,}", f"{p.build_params}; {p.search_params}",
+                detail.append([NAMES[kind], f"{n:,}", config(p),
                                f"{p.recall_at_10:.4f}", f"{p.build_time_s:.1f}",
                                f"{p.index_bytes / 1e6:.1f}"])
             else:
@@ -87,13 +98,13 @@ def main():
             line.append("n/a" if e is None or a is None else f"{e / a:.0f}x")
         speed.append(line)
 
-    header = ["Index"] + [f"ms/query @ {n // 1000}K" for n in SIZES] \
-        + [f"growth {n // 1000}K vs {BASE_N // 1000}K" for n in SIZES[1:]] + ["scaling exponent"]
+    header = ["Index"] + [f"ms/query @ {label(n)}" for n in SIZES] \
+        + [f"growth {label(n)} vs {label(BASE_N)}" for n in SIZES[1:]] + ["scaling exponent"]
     text = (
         f"Cost at recall@10 >= {TARGET}, one thread, one query per call (SIFT, final queries)\n\n"
         + md_table(header, rows)
         + "\nSpeedup over exact search at the same size\n\n"
-        + md_table(["Index"] + [f"{n // 1000}K" for n in SIZES], speed)
+        + md_table(["Index"] + [label(n) for n in SIZES], speed)
         + "\nConfiguration, recall, build time and size behind each point\n\n"
         + md_table(["Index", "n", "Config", "recall@10", "Build time (s)", "Size (MB)"], detail)
     )
@@ -111,7 +122,7 @@ def main():
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xticks(SIZES)
-    ax.set_xticklabels([f"{n // 1000}K" if n < 1_000_000 else "1M" for n in SIZES])
+    ax.set_xticklabels([label(n) for n in SIZES])
     ax.minorticks_off()
     ax.set_xlabel("number of vectors", color=INK)
     ax.set_ylabel(f"ms per query at recall@10 >= {TARGET} (1 thread, log scale)", color=INK)

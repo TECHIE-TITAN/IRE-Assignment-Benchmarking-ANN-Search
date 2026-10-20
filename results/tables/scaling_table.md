@@ -1,6 +1,6 @@
 Cost at recall@10 >= 0.95, one thread, one query per call (SIFT, final queries)
 
-| Index | ms/query @ 100K | ms/query @ 300K | ms/query @ 1000K | growth 300K vs 100K | growth 1000K vs 100K | scaling exponent |
+| Index | ms/query @ 100K | ms/query @ 300K | ms/query @ 1M | growth 300K vs 100K | growth 1M vs 100K | scaling exponent |
 |---|---|---|---|---|---|---|
 | Exact (Flat) | 3.869 | 11.577 | 42.105 | 3.0x | 10.9x | 1.04 |
 | HNSW | 0.079 | 0.137 | 0.249 | 1.7x | 3.2x | 0.50 |
@@ -8,7 +8,7 @@ Cost at recall@10 >= 0.95, one thread, one query per call (SIFT, final queries)
 
 Speedup over exact search at the same size
 
-| Index | 100K | 300K | 1000K |
+| Index | 100K | 300K | 1M |
 |---|---|---|---|
 | HNSW | 49x | 84x | 169x |
 | IVF-Flat | 25x | 29x | 50x |
@@ -17,9 +17,9 @@ Configuration, recall, build time and size behind each point
 
 | Index | n | Config | recall@10 | Build time (s) | Size (MB) |
 |---|---|---|---|---|---|
-| Exact (Flat) | 100,000 | IndexFlatL2; nan | 1.0000 | 0.1 | 51.2 |
-| Exact (Flat) | 300,000 | IndexFlatL2; nan | 1.0000 | 0.1 | 153.6 |
-| Exact (Flat) | 1,000,000 | IndexFlatL2; nan | 1.0000 | 0.5 | 512.0 |
+| Exact (Flat) | 100,000 | IndexFlatL2 | 1.0000 | 0.1 | 51.2 |
+| Exact (Flat) | 300,000 | IndexFlatL2 | 1.0000 | 0.1 | 153.6 |
+| Exact (Flat) | 1,000,000 | IndexFlatL2 | 1.0000 | 0.5 | 512.0 |
 | HNSW | 100,000 | M=32;efConstruction=200; efSearch=24 | 0.9536 | 5.7 | 78.4 |
 | HNSW | 300,000 | M=8;efConstruction=200; efSearch=64 | 0.9547 | 21.1 | 177.8 |
 | HNSW | 1,000,000 | M=16;efConstruction=200; efSearch=48 | 0.9563 | 164.7 | 656.3 |
