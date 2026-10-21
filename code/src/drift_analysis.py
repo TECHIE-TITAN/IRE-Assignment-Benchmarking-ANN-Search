@@ -13,6 +13,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
+from matplotlib.ticker import FuncFormatter
 
 from plots import GRID, INK, MUTED, STYLE
 from results_log import FIGURES_DIR, RESULTS_CSV
@@ -81,6 +82,9 @@ def main():
     ax_r.set_ylabel("recall@10", color=INK)
     ax_s.set_ylabel("QPS relative to the index on the control", color=INK)
     ax_s.set_yscale("log")
+    plain = FuncFormatter(lambda v, _: f"{v:g}")
+    ax_s.yaxis.set_major_formatter(plain)
+    ax_s.yaxis.set_minor_formatter(plain)
     for ax, title in ((ax_r, "Recall as the data drifts"), (ax_s, "Speed as the data drifts")):
         ax.set_xlabel("shift of added vectors and queries (cluster radii)", color=INK)
         ax.set_xticks(shifts)
