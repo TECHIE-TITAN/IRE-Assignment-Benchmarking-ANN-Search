@@ -13,6 +13,7 @@ Writes results/tables/scaling_table.md and results/figures/scaling_sift.{png,pdf
 
 Usage: python src/scaling_experiment.py
 """
+import argparse
 import math
 
 import matplotlib
@@ -63,6 +64,13 @@ def fmt(x, spec=".2f"):
 
 
 def main():
+    global SIZES, BASE_N
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--sizes", type=int, nargs="+", default=SIZES,
+                    help="vector counts to compare (default: 100K 300K 1M)")
+    SIZES = sorted(ap.parse_args().sizes)
+    BASE_N = SIZES[0]
+
     points = load_points(pd.read_csv(RESULTS_CSV))
     cost = {k: cost_ms(v) for k, v in points.items()}
 

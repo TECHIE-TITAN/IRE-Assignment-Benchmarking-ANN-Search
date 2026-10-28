@@ -17,7 +17,15 @@ TABLES_DIR = RESULTS_DIR / "tables"
 KINDS = ["hnsw", "ivfflat", "ivfpq"]
 NAMES = {"hnsw": "HNSW", "ivfflat": "IVF-Flat", "ivfpq": "IVF-PQ", "exact": "Exact (Flat)"}
 DATASETS = {"sift": "SIFT-1M", "glove": "GloVe-100"}
+FULL_SIZES = {"sift": 1_000_000, "glove": 1_183_514}
 TARGETS = (0.90, 0.95)
+
+
+def dataset_label(ds, n):
+    """Name used in tables and figures; a subset run is marked with its size."""
+    if n == FULL_SIZES[ds]:
+        return DATASETS[ds]
+    return f"{DATASETS[ds]} (first {n // 1000}K)"
 
 
 def load_results(path=RESULTS_CSV):
@@ -64,6 +72,7 @@ def qps_table(part2, exact_qps):
         sub = part2[part2.dataset == ds]
         if sub.empty:
             continue
+        label = dataset_label(ds, int(sub.n_vectors.iloc[0]))
         if ds in exact_qps:
             rows.append([label, NAMES["exact"], f"{exact_qps[ds]:.0f} (recall 1.0)",
                          f"{exact_qps[ds]:.0f} (recall 1.0)", "IndexFlatL2"])
@@ -85,6 +94,9 @@ def build_table(part2):
     rows = []
     for ds, label in DATASETS.items():
         sub = part2[part2.dataset == ds]
+        if sub.empty:
+            continue
+        label = dataset_label(ds, int(sub.n_vectors.iloc[0]))
         for kind in KINDS:
             g = sub[sub["index"] == kind]
             if g.empty:

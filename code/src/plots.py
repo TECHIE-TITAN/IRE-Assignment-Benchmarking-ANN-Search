@@ -13,7 +13,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from results_log import FIGURES_DIR
-from tables import DATASETS, KINDS, NAMES, load_results, pareto
+from tables import DATASETS, KINDS, NAMES, dataset_label, load_results, pareto
 
 # categorical slots 1-3 of the reference palette (light surface); marker
 # shape is a second encoding so identity never relies on colour alone
@@ -50,7 +50,7 @@ def plot_dataset(ds, part2, exact_qps):
     ax.set_xlim(right=1.01)
     ax.set_xlabel("recall@10", color=INK)
     ax.set_ylabel("queries per second (1 thread, log scale)", color=INK)
-    ax.set_title(f"{DATASETS[ds]}: recall vs speed, best trade-off per index (n={n:,})",
+    ax.set_title(f"{dataset_label(ds, n)}: recall vs speed, best trade-off per index (n={n:,})",
                  fontsize=10, color=INK)
     ax.grid(True, which="major", color=GRID, linewidth=0.6)
     ax.set_axisbelow(True)

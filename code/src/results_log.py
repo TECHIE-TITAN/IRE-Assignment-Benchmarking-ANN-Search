@@ -4,10 +4,13 @@ results/ lives next to code/ (not inside it), matching the submission layout:
     <root>/code/src/results_log.py  ->  <root>/results/
 """
 import csv
+import os
 from datetime import datetime
 from pathlib import Path
 
-RESULTS_DIR = Path(__file__).resolve().parent.parent.parent / "results"
+# run_all.sh --quick sets A3_RESULTS_DIR so a quick run never touches the real results
+RESULTS_DIR = Path(os.environ.get("A3_RESULTS_DIR")
+                   or Path(__file__).resolve().parent.parent.parent / "results")
 FIGURES_DIR = RESULTS_DIR / "figures"
 RESULTS_CSV = RESULTS_DIR / "results.csv"
 
