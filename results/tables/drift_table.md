@@ -2,8 +2,8 @@ Recall@10 against exact search over all vectors (final queries)
 
 | Index | Variant | shift 0 | shift 1 | shift 2 | shift 4 |
 |---|---|---|---|---|---|
-| HNSW | stale | 0.959 | 0.985 | 0.972 | 0.978 |
-| HNSW | refreshed | 0.960 | 0.989 | 0.991 | 0.991 |
+| HNSW | stale | 0.958 | 0.984 | 0.974 | 0.980 |
+| HNSW | refreshed | 0.959 | 0.989 | 0.991 | 0.991 |
 | IVF-Flat | stale | 0.999 | 1.000 | 1.000 | 0.998 |
 | IVF-Flat | refreshed | 1.000 | 1.000 | 1.000 | 0.998 |
 | IVF-PQ | stale | 0.575 | 0.438 | 0.252 | 0.122 |
@@ -13,12 +13,12 @@ QPS, one thread, one query per call (in brackets: relative to the same index on 
 
 | Index | Variant | shift 0 | shift 1 | shift 2 | shift 4 |
 |---|---|---|---|---|---|
-| HNSW | stale | 9194 (1.00x) | 15834 (1.72x) | 15083 (1.64x) | 17331 (1.88x) |
-| HNSW | refreshed | 9088 (0.99x) | 15847 (1.72x) | 14768 (1.61x) | 17081 (1.86x) |
-| IVF-Flat | stale | 9921 (1.00x) | 9778 (0.99x) | 9387 (0.95x) | 10713 (1.08x) |
-| IVF-Flat | refreshed | 10512 (1.06x) | 11048 (1.11x) | 11226 (1.13x) | 9830 (0.99x) |
-| IVF-PQ | stale | 6364 (1.00x) | 6303 (0.99x) | 6292 (0.99x) | 6296 (0.99x) |
-| IVF-PQ | refreshed | 6928 (1.09x) | 7176 (1.13x) | 7457 (1.17x) | 5351 (0.84x) |
+| HNSW | stale | 11348 (1.00x) | 20855 (1.84x) | 19898 (1.75x) | 22435 (1.98x) |
+| HNSW | refreshed | 11348 (1.00x) | 20801 (1.83x) | 19893 (1.75x) | 19213 (1.69x) |
+| IVF-Flat | stale | 11658 (1.00x) | 10795 (0.93x) | 11766 (1.01x) | 11591 (0.99x) |
+| IVF-Flat | refreshed | 12452 (1.07x) | 12435 (1.07x) | 13899 (1.19x) | 9700 (0.83x) |
+| IVF-PQ | stale | 6794 (1.00x) | 6793 (1.00x) | 6832 (1.01x) | 6774 (1.00x) |
+| IVF-PQ | refreshed | 7402 (1.09x) | 7780 (1.15x) | 8146 (1.20x) | 5780 (0.85x) |
 
 IVF lists: largest list / mean list / mean vectors scanned per query
 
