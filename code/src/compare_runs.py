@@ -19,18 +19,25 @@ from scaling_experiment import SIZES, cost_ms, label, load_points
 from tables import DATASETS, KINDS, NAMES, TARGETS, best_at, load_results, md_table
 
 KEY = ["experiment", "dataset", "n_vectors", "split", "index", "build_params",
-       "search_params", "mode"]
+       "search_params", "mode_key"]
 
 
 def pct(a, b):
     return 100.0 * (b - a) / a
 
 
+def with_mode_key(df):
+    """Exact search logs two batch rows (1 thread, 8 threads) that differ only in notes."""
+    df = df.copy()
+    df["mode_key"] = df["mode"].astype(str)
+    exact = df["index"] == "exact"
+    df.loc[exact, "mode_key"] = df.loc[exact, "mode"].astype(str) + "|" + df.loc[exact, "notes"].astype(str)
+    df[KEY] = df[KEY].fillna("")
+    return df
+
+
 def matched_rows(a, b):
-    a, b = a.copy(), b.copy()
-    for df in (a, b):
-        df[KEY] = df[KEY].fillna("")
-    return a.merge(b, on=KEY, suffixes=("_a", "_b"))
+    return with_mode_key(a).merge(with_mode_key(b), on=KEY, suffixes=("_a", "_b"))
 
 
 def row_summary(a, b):
