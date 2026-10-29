@@ -1,0 +1,2 @@
+wrote recall_vs_qps_sift.png/.pdf
+wrote recall_vs_qps_glove.png/.pdf

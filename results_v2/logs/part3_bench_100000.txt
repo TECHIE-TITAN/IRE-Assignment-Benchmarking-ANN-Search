@@ -1,0 +1,60 @@
+
+##### sift: n=100000 d=128 split=final queries=5000 timed=5000
+
+[hnsw] M=8;efConstruction=200  build=4.6s size=59.3MB
+  efSearch=10    recall=0.7258 qps=  30218.4
+  efSearch=16    recall=0.8193 qps=  24621.0
+  efSearch=24    recall=0.8857 qps=  19779.2
+  efSearch=32    recall=0.9215 qps=  16790.0
+  efSearch=48    recall=0.9570 qps=  12934.2
+  efSearch=64    recall=0.9742 qps=  10544.0
+  efSearch=96    recall=0.9879 qps=   7771.0
+  efSearch=128   recall=0.9935 qps=   6163.6
+  best recall for this build: 0.9935
+
+[hnsw] M=16;efConstruction=200  build=5.0s size=65.6MB
+  efSearch=10    recall=0.8066 qps=  24857.8
+  efSearch=16    recall=0.8846 qps=  19972.1
+  efSearch=24    recall=0.9360 qps=  15983.2
+  efSearch=32    recall=0.9610 qps=  13290.4
+  efSearch=48    recall=0.9818 qps=  10195.0
+  efSearch=64    recall=0.9904 qps=   8280.4
+  best recall for this build: 0.9904
+
+[hnsw] M=32;efConstruction=200  build=5.3s size=78.4MB
+  efSearch=10    recall=0.8437 qps=  21518.7
+  efSearch=16    recall=0.9135 qps=  17254.1
+  efSearch=24    recall=0.9538 qps=  13621.2
+  efSearch=32    recall=0.9729 qps=  11288.5
+  efSearch=48    recall=0.9891 qps=   8620.9
+  efSearch=64    recall=0.9946 qps=   6849.0
+  best recall for this build: 0.9946
+
+[ivfflat] nlist=256  build=0.9s size=52.1MB
+  nprobe=1     recall=0.4311 qps=  28953.1
+  nprobe=2     recall=0.6113 qps=  21689.0
+  nprobe=4     recall=0.7815 qps=  14616.3
+  nprobe=8     recall=0.9055 qps=   8670.1
+  nprobe=16    recall=0.9725 qps=   4778.1
+  nprobe=32    recall=0.9964 qps=   2510.8
+  best recall for this build: 0.9964
+
+[ivfflat] nlist=512  build=2.1s size=52.3MB
+  nprobe=1     recall=0.3751 qps=  31928.2
+  nprobe=2     recall=0.5444 qps=  25769.3
+  nprobe=4     recall=0.7112 qps=  19531.6
+  nprobe=8     recall=0.8490 qps=  12179.7
+  nprobe=16    recall=0.9420 qps=   7351.0
+  nprobe=32    recall=0.9853 qps=   4076.1
+  nprobe=64    recall=0.9982 qps=   2187.6
+  best recall for this build: 0.9982
+
+[ivfflat] nlist=1024  build=4.5s size=52.5MB
+  nprobe=1     recall=0.3225 qps=  25707.6
+  nprobe=2     recall=0.4787 qps=  22995.0
+  nprobe=4     recall=0.6416 qps=  19405.8
+  nprobe=8     recall=0.7867 qps=  15329.3
+  nprobe=16    recall=0.8987 qps=  10311.2
+  nprobe=32    recall=0.9652 qps=   6419.5
+  nprobe=64    recall=0.9932 qps=   3714.0
+  best recall for this build: 0.9932

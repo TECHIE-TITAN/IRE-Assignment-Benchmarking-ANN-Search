@@ -1,0 +1,18 @@
+
+=== sift ===
+agreement with stored neighbours (all 10000 queries):
+  tie-aware recall@10 of stored vs ours : 1.000000
+  queries with identical top-10 id sets : 99.3500%
+exact recall@10 on final queries: 1.000000
+  1 thread, one query per call                       27.0 QPS (37.018 ms/query)
+  1 thread, all queries in one call                 263.8 QPS (3.791 ms/query)
+  8 threads, all queries in one call                250.8 QPS (3.987 ms/query)
+
+=== glove ===
+agreement with stored neighbours (all 10000 queries):
+  tie-aware recall@10 of stored vs ours : 1.000000
+  queries with identical top-10 id sets : 100.0000%
+exact recall@10 on final queries: 1.000000
+  1 thread, one query per call                       28.1 QPS (35.534 ms/query)
+  1 thread, all queries in one call                 282.6 QPS (3.539 ms/query)
+  8 threads, all queries in one call                265.1 QPS (3.772 ms/query)

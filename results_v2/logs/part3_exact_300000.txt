@@ -1,0 +1,7 @@
+
+=== sift ===
+subset run: stored neighbours not valid, skipping agreement check
+exact recall@10 on final queries: 1.000000
+  1 thread, one query per call                       89.6 QPS (11.162 ms/query)
+  1 thread, all queries in one call                 883.3 QPS (1.132 ms/query)
+  8 threads, all queries in one call                837.6 QPS (1.194 ms/query)

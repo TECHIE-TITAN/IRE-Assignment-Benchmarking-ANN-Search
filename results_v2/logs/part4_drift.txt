@@ -1,0 +1,40 @@
+config: DriftConfig(d=64, n_clusters=64, sigma=1.0, center_scale=3.0, n_base=100000, n_new=50000, n_queries=10000, seed=0)
+shifts (cluster radii): [0, 1, 2, 4], radius = 8.00
+[hnsw] built on base: M=16;efConstruction=200 in 2.7s
+[hnsw] calibrated on control (tune queries): efSearch=48 recall=0.9594
+[ivfflat] built on base: nlist=256 in 0.5s
+[ivfflat] calibrated on control (tune queries): nprobe=8 recall=0.9985
+[ivfpq] built on base: nlist=256;m=16;nbits=8 in 1.6s
+[ivfpq] calibrated on control (tune queries): nprobe=16 recall=0.5743
+
+===== shift = 0 cluster radii =====
+  hnsw     stale     recall=0.9582 qps=  11347.7 time=add_new
+  hnsw     refreshed recall=0.9588 qps=  11347.5 time=rebuild
+  ivfflat  stale     recall=0.9986 qps=  11657.5 time=add_new;max_list=2399;mean_list=585.9;scanned=5579
+  ivfflat  refreshed recall=0.9996 qps=  12451.9 time=rebuild;max_list=2340;mean_list=585.9;scanned=5061
+  ivfpq    stale     recall=0.5751 qps=   6793.8 time=add_new;max_list=2399;mean_list=585.9;scanned=11037
+  ivfpq    refreshed recall=0.5760 qps=   7402.1 time=rebuild;max_list=2340;mean_list=585.9;scanned=9904
+
+===== shift = 1 cluster radii =====
+  hnsw     stale     recall=0.9840 qps=  20855.4 time=add_new
+  hnsw     refreshed recall=0.9891 qps=  20801.1 time=rebuild
+  ivfflat  stale     recall=0.9997 qps=  10795.1 time=add_new;max_list=2399;mean_list=585.9;scanned=5642
+  ivfflat  refreshed recall=1.0000 qps=  12434.6 time=rebuild;max_list=2340;mean_list=585.9;scanned=4755
+  ivfpq    stale     recall=0.4383 qps=   6793.5 time=add_new;max_list=2399;mean_list=585.9;scanned=11006
+  ivfpq    refreshed recall=0.6070 qps=   7780.5 time=rebuild;max_list=2340;mean_list=585.9;scanned=9357
+
+===== shift = 2 cluster radii =====
+  hnsw     stale     recall=0.9740 qps=  19898.3 time=add_new
+  hnsw     refreshed recall=0.9910 qps=  19892.8 time=rebuild
+  ivfflat  stale     recall=0.9999 qps=  11766.4 time=add_new;max_list=2399;mean_list=585.9;scanned=5588
+  ivfflat  refreshed recall=1.0000 qps=  13898.7 time=rebuild;max_list=2340;mean_list=585.9;scanned=4575
+  ivfpq    stale     recall=0.2517 qps=   6832.0 time=add_new;max_list=2399;mean_list=585.9;scanned=10893
+  ivfpq    refreshed recall=0.6003 qps=   8145.7 time=rebuild;max_list=2340;mean_list=585.9;scanned=8815
+
+===== shift = 4 cluster radii =====
+  hnsw     stale     recall=0.9804 qps=  22434.6 time=add_new
+  hnsw     refreshed recall=0.9913 qps=  19213.3 time=rebuild
+  ivfflat  stale     recall=0.9983 qps=  11590.7 time=add_new;max_list=2399;mean_list=585.9;scanned=5351
+  ivfflat  refreshed recall=0.9983 qps=   9700.3 time=rebuild;max_list=2316;mean_list=585.9;scanned=7973
+  ivfpq    stale     recall=0.1222 qps=   6774.5 time=add_new;max_list=2399;mean_list=585.9;scanned=10972
+  ivfpq    refreshed recall=0.5651 qps=   5780.5 time=rebuild;max_list=2316;mean_list=585.9;scanned=13664

@@ -1,0 +1,65 @@
+
+##### sift: n=300000 d=128 split=final queries=5000 timed=5000
+
+[hnsw] M=8;efConstruction=200  build=20.1s size=177.8MB
+  efSearch=10    recall=0.6658 qps=  21500.5
+  efSearch=16    recall=0.7658 qps=  17565.8
+  efSearch=24    recall=0.8422 qps=  14420.1
+  efSearch=32    recall=0.8833 qps=  12242.3
+  efSearch=48    recall=0.9315 qps=   9440.3
+  efSearch=64    recall=0.9540 qps=   7765.7
+  efSearch=96    recall=0.9764 qps=   5715.8
+  efSearch=128   recall=0.9855 qps=   4548.8
+  efSearch=192   recall=0.9939 qps=   3235.7
+  best recall for this build: 0.9939
+
+[hnsw] M=16;efConstruction=200  build=24.8s size=196.9MB
+  efSearch=10    recall=0.7633 qps=  17417.7
+  efSearch=16    recall=0.8501 qps=  14005.6
+  efSearch=24    recall=0.9068 qps=  11207.3
+  efSearch=32    recall=0.9390 qps=   9333.2
+  efSearch=48    recall=0.9696 qps=   7183.5
+  efSearch=64    recall=0.9831 qps=   5816.4
+  efSearch=96    recall=0.9932 qps=   4264.3
+  best recall for this build: 0.9932
+
+[hnsw] M=32;efConstruction=200  build=28.3s size=235.2MB
+  efSearch=10    recall=0.8104 qps=  14473.0
+  efSearch=16    recall=0.8875 qps=  11549.9
+  efSearch=24    recall=0.9341 qps=   9187.3
+  efSearch=32    recall=0.9581 qps=   7635.8
+  efSearch=48    recall=0.9798 qps=   5796.2
+  efSearch=64    recall=0.9891 qps=   4694.7
+  efSearch=96    recall=0.9961 qps=   3446.7
+  best recall for this build: 0.9961
+
+[ivfflat] nlist=512  build=3.3s size=156.3MB
+  nprobe=1     recall=0.4089 qps=  21801.5
+  nprobe=2     recall=0.5825 qps=  14616.9
+  nprobe=4     recall=0.7460 qps=   8907.7
+  nprobe=8     recall=0.8755 qps=   4997.9
+  nprobe=16    recall=0.9562 qps=   2653.0
+  nprobe=32    recall=0.9889 qps=   1375.0
+  nprobe=64    recall=0.9986 qps=    695.9
+  best recall for this build: 0.9986
+
+[ivfflat] nlist=1024  build=10.2s size=156.5MB
+  nprobe=1     recall=0.3560 qps=  21940.0
+  nprobe=2     recall=0.5178 qps=  17453.3
+  nprobe=4     recall=0.6775 qps=  12498.6
+  nprobe=8     recall=0.8188 qps=   8013.4
+  nprobe=16    recall=0.9205 qps=   4697.4
+  nprobe=32    recall=0.9732 qps=   2563.2
+  nprobe=64    recall=0.9947 qps=   1344.4
+  best recall for this build: 0.9947
+
+[ivfflat] nlist=2048  build=24.7s size=157.1MB
+  nprobe=1     recall=0.3119 qps=  17158.5
+  nprobe=2     recall=0.4551 qps=  15460.8
+  nprobe=4     recall=0.6144 qps=  13413.9
+  nprobe=8     recall=0.7589 qps=  10219.0
+  nprobe=16    recall=0.8736 qps=   6315.2
+  nprobe=32    recall=0.9484 qps=   4143.8
+  nprobe=64    recall=0.9854 qps=   2326.5
+  nprobe=128   recall=0.9975 qps=   1260.2
+  best recall for this build: 0.9975

@@ -1,0 +1,328 @@
+
+##### sift: n=1000000 d=128 split=final queries=5000 timed=5000
+
+[hnsw] M=8;efConstruction=200  build=84.7s size=592.6MB
+  efSearch=10    recall=0.6300 qps=  12918.3
+  efSearch=16    recall=0.7285 qps=  11172.0
+  efSearch=24    recall=0.8017 qps=   9511.3
+  efSearch=32    recall=0.8474 qps=   8320.5
+  efSearch=48    recall=0.8982 qps=   6823.7
+  efSearch=64    recall=0.9278 qps=   5722.0
+  efSearch=96    recall=0.9574 qps=   4358.8
+  efSearch=128   recall=0.9711 qps=   3522.3
+  efSearch=192   recall=0.9843 qps=   2577.5
+  efSearch=256   recall=0.9899 qps=   1970.1
+  efSearch=384   recall=0.9948 qps=   1410.7
+  best recall for this build: 0.9948
+
+[hnsw] M=16;efConstruction=200  build=112.3s size=656.3MB
+  efSearch=10    recall=0.7407 qps=  10735.1
+  efSearch=16    recall=0.8273 qps=   9028.5
+  efSearch=24    recall=0.8866 qps=   7610.0
+  efSearch=32    recall=0.9207 qps=   6573.2
+  efSearch=48    recall=0.9556 qps=   5173.4
+  efSearch=64    recall=0.9724 qps=   4264.6
+  efSearch=96    recall=0.9867 qps=   3220.5
+  efSearch=128   recall=0.9923 qps=   2577.4
+  best recall for this build: 0.9923
+
+[hnsw] M=32;efConstruction=200  build=133.2s size=784.1MB
+  efSearch=10    recall=0.7897 qps=   9168.0
+  efSearch=16    recall=0.8669 qps=   7648.4
+  efSearch=24    recall=0.9191 qps=   6310.6
+  efSearch=32    recall=0.9459 qps=   5389.3
+  efSearch=48    recall=0.9731 qps=   4191.3
+  efSearch=64    recall=0.9851 qps=   3438.2
+  efSearch=96    recall=0.9934 qps=   2571.5
+  best recall for this build: 0.9934
+
+[ivfflat] nlist=1024  build=13.8s size=520.5MB
+  nprobe=1     recall=0.3914 qps=  13593.1
+  nprobe=2     recall=0.5592 qps=   8791.1
+  nprobe=4     recall=0.7196 qps=   5143.9
+  nprobe=8     recall=0.8510 qps=   2846.1
+  nprobe=16    recall=0.9374 qps=   1495.1
+  nprobe=32    recall=0.9812 qps=    780.6
+  nprobe=64    recall=0.9961 qps=    396.6
+  best recall for this build: 0.9961
+
+[ivfflat] nlist=2048  build=46.2s size=521.1MB
+  nprobe=1     recall=0.3491 qps=  13793.2
+  nprobe=2     recall=0.5005 qps=  10707.0
+  nprobe=4     recall=0.6539 qps=   7446.1
+  nprobe=8     recall=0.7917 qps=   4679.3
+  nprobe=16    recall=0.8961 qps=   2663.1
+  nprobe=32    recall=0.9611 qps=   1438.5
+  nprobe=64    recall=0.9893 qps=    755.0
+  nprobe=128   recall=0.9981 qps=    386.4
+  best recall for this build: 0.9981
+
+[ivfflat] nlist=4096  build=162.8s size=522.1MB
+  nprobe=1     recall=0.3032 qps=  10185.7
+  nprobe=2     recall=0.4458 qps=   9202.1
+  nprobe=4     recall=0.5983 qps=   7661.0
+  nprobe=8     recall=0.7405 qps=   5672.6
+  nprobe=16    recall=0.8549 qps=   3902.1
+  nprobe=32    recall=0.9326 qps=   2365.5
+  nprobe=64    recall=0.9768 qps=   1332.7
+  nprobe=128   recall=0.9942 qps=    715.1
+  best recall for this build: 0.9942
+
+[ivfpq] nlist=1024;m=16;nbits=8  build=16.9s size=24.7MB
+  nprobe=1     recall=0.3206 qps=  18628.9
+  nprobe=2     recall=0.4231 qps=  15251.6
+  nprobe=4     recall=0.5000 qps=  11191.7
+  nprobe=8     recall=0.5479 qps=   7360.8
+  nprobe=16    recall=0.5704 qps=   4405.7
+  nprobe=32    recall=0.5792 qps=   2480.0
+  nprobe=64    recall=0.5811 qps=   1329.6
+  nprobe=128   recall=0.5815 qps=    694.5
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.5815
+
+[ivfpq] nlist=1024;m=32;nbits=8  build=17.3s size=40.7MB
+  nprobe=1     recall=0.3604 qps=  15812.8
+  nprobe=2     recall=0.4946 qps=  11981.5
+  nprobe=4     recall=0.6035 qps=   8115.9
+  nprobe=8     recall=0.6755 qps=   5001.1
+  nprobe=16    recall=0.7126 qps=   2825.5
+  nprobe=32    recall=0.7275 qps=   1544.4
+  nprobe=64    recall=0.7314 qps=    807.4
+  nprobe=128   recall=0.7322 qps=    422.7
+  nprobe=256   recall=0.7323 qps=    215.7
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.7323
+
+[ivfpq] nlist=1024;m=64;nbits=8  build=18.7s size=72.7MB
+  nprobe=1     recall=0.3834 qps=  11749.3
+  nprobe=2     recall=0.5402 qps=   8059.5
+  nprobe=4     recall=0.6820 qps=   4972.5
+  nprobe=8     recall=0.7864 qps=   2835.4
+  nprobe=16    recall=0.8461 qps=   1534.4
+  nprobe=32    recall=0.8715 qps=    802.6
+  nprobe=64    recall=0.8788 qps=    415.4
+  nprobe=128   recall=0.8804 qps=    213.0
+  nprobe=256   recall=0.8805 qps=    107.8
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.8805
+
+[ivfpq] nlist=4096;m=16;nbits=8  build=153.6s size=26.3MB
+  nprobe=1     recall=0.2707 qps=  10077.0
+  nprobe=2     recall=0.3733 qps=   9842.3
+  nprobe=4     recall=0.4604 qps=   9014.6
+  nprobe=8     recall=0.5260 qps=   7733.0
+  nprobe=16    recall=0.5652 qps=   6087.1
+  nprobe=32    recall=0.5848 qps=   4260.0
+  nprobe=64    recall=0.5933 qps=   2666.1
+  nprobe=128   recall=0.5958 qps=   1567.2
+  nprobe=256   recall=0.5961 qps=    857.9
+  nprobe=512   recall=0.5961 qps=    453.7
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.5961
+
+[ivfpq] nlist=4096;m=32;nbits=8  build=154.4s size=42.3MB
+  nprobe=1     recall=0.2906 qps=   8932.0
+  nprobe=2     recall=0.4157 qps=   8628.7
+  nprobe=4     recall=0.5338 qps=   7609.3
+  nprobe=8     recall=0.6280 qps=   6167.4
+  nprobe=16    recall=0.6910 qps=   4497.5
+  nprobe=32    recall=0.7235 qps=   2928.5
+  nprobe=64    recall=0.7397 qps=   1726.3
+  nprobe=128   recall=0.7443 qps=    964.3
+  nprobe=256   recall=0.7454 qps=    511.0
+  nprobe=512   recall=0.7454 qps=    264.1
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.7454
+
+[ivfpq] nlist=4096;m=64;nbits=8  build=156.4s size=74.3MB
+  nprobe=1     recall=0.3001 qps=   8094.2
+  nprobe=2     recall=0.4380 qps=   7229.2
+  nprobe=4     recall=0.5802 qps=   5896.6
+  nprobe=8     recall=0.7035 qps=   4311.4
+  nprobe=16    recall=0.7948 qps=   2819.5
+  nprobe=32    recall=0.8482 qps=   1671.5
+  nprobe=64    recall=0.8744 qps=    923.5
+  nprobe=128   recall=0.8835 qps=    492.3
+  nprobe=256   recall=0.8857 qps=    254.4
+  nprobe=512   recall=0.8860 qps=    128.3
+  nprobe=1024  recall=0.8861 qps=     65.6
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.8861
+
+##### glove: n=1183514 d=100 split=final queries=5000 timed=5000
+
+[hnsw] M=8;efConstruction=200  build=97.9s size=568.8MB
+  efSearch=10    recall=0.3477 qps=  11877.7
+  efSearch=16    recall=0.4283 qps=  10231.0
+  efSearch=24    recall=0.4994 qps=   8749.7
+  efSearch=32    recall=0.5477 qps=   7689.3
+  efSearch=48    recall=0.6105 qps=   6291.3
+  efSearch=64    recall=0.6554 qps=   5358.6
+  efSearch=96    recall=0.7081 qps=   4185.7
+  efSearch=128   recall=0.7408 qps=   3455.3
+  efSearch=192   recall=0.7811 qps=   2570.4
+  efSearch=256   recall=0.8058 qps=   2043.8
+  efSearch=384   recall=0.8339 qps=   1434.0
+  efSearch=512   recall=0.8521 qps=   1095.1
+  efSearch=768   recall=0.8748 qps=    722.0
+  efSearch=1024  recall=0.8890 qps=    526.7
+  best recall for this build: 0.8890
+
+[hnsw] M=16;efConstruction=200  build=174.8s size=644.2MB
+  efSearch=10    recall=0.4978 qps=   9148.6
+  efSearch=16    recall=0.5836 qps=   7938.9
+  efSearch=24    recall=0.6480 qps=   6628.5
+  efSearch=32    recall=0.6903 qps=   5753.0
+  efSearch=48    recall=0.7452 qps=   4564.7
+  efSearch=64    recall=0.7799 qps=   3810.6
+  efSearch=96    recall=0.8222 qps=   2896.0
+  efSearch=128   recall=0.8472 qps=   2344.3
+  efSearch=192   recall=0.8758 qps=   1652.9
+  efSearch=256   recall=0.8940 qps=   1340.9
+  efSearch=384   recall=0.9174 qps=    932.1
+  efSearch=512   recall=0.9324 qps=    715.5
+  efSearch=768   recall=0.9502 qps=    474.1
+  efSearch=1024  recall=0.9597 qps=    352.0
+  best recall for this build: 0.9597
+
+[hnsw] M=32;efConstruction=200  build=242.3s size=795.5MB
+  efSearch=10    recall=0.5856 qps=   7438.3
+  efSearch=16    recall=0.6664 qps=   6111.7
+  efSearch=24    recall=0.7235 qps=   5004.3
+  efSearch=32    recall=0.7610 qps=   4285.5
+  efSearch=48    recall=0.8087 qps=   3350.8
+  efSearch=64    recall=0.8366 qps=   2750.8
+  efSearch=96    recall=0.8730 qps=   2053.2
+  efSearch=128   recall=0.8955 qps=   1638.2
+  efSearch=192   recall=0.9222 qps=   1160.6
+  efSearch=256   recall=0.9388 qps=    913.8
+  efSearch=384   recall=0.9571 qps=    635.3
+  efSearch=512   recall=0.9681 qps=    486.9
+  efSearch=768   recall=0.9805 qps=    331.6
+  efSearch=1024  recall=0.9872 qps=    246.9
+  best recall for this build: 0.9872
+
+[ivfflat] nlist=1024  build=11.4s size=483.3MB
+  nprobe=1     recall=0.3980 qps=  13190.6
+  nprobe=2     recall=0.5231 qps=   8715.7
+  nprobe=4     recall=0.6340 qps=   5268.3
+  nprobe=8     recall=0.7214 qps=   2988.2
+  nprobe=16    recall=0.7961 qps=   1634.6
+  nprobe=32    recall=0.8576 qps=    866.9
+  nprobe=64    recall=0.9081 qps=    454.0
+  nprobe=128   recall=0.9499 qps=    231.8
+  nprobe=256   recall=0.9797 qps=    116.4
+  nprobe=512   recall=0.9967 qps=     56.0
+  best recall for this build: 0.9967
+
+[ivfflat] nlist=2048  build=37.6s size=483.7MB
+  nprobe=1     recall=0.3603 qps=  12840.0
+  nprobe=2     recall=0.4805 qps=  10718.8
+  nprobe=4     recall=0.5887 qps=   7571.5
+  nprobe=8     recall=0.6789 qps=   4788.6
+  nprobe=16    recall=0.7559 qps=   2847.3
+  nprobe=32    recall=0.8204 qps=   1625.2
+  nprobe=64    recall=0.8760 qps=    876.1
+  nprobe=128   recall=0.9211 qps=    460.5
+  nprobe=256   recall=0.9586 qps=    236.2
+  nprobe=512   recall=0.9838 qps=    118.5
+  nprobe=1024  recall=0.9980 qps=     55.9
+  best recall for this build: 0.9980
+
+[ivfflat] nlist=4096  build=137.0s size=484.5MB
+  nprobe=1     recall=0.3247 qps=  10041.9
+  nprobe=2     recall=0.4385 qps=   9094.3
+  nprobe=4     recall=0.5474 qps=   7646.9
+  nprobe=8     recall=0.6395 qps=   5836.9
+  nprobe=16    recall=0.7189 qps=   3997.5
+  nprobe=32    recall=0.7835 qps=   2486.1
+  nprobe=64    recall=0.8408 qps=   1491.5
+  nprobe=128   recall=0.8906 qps=    851.2
+  nprobe=256   recall=0.9323 qps=    449.9
+  nprobe=512   recall=0.9635 qps=    232.0
+  nprobe=1024  recall=0.9866 qps=    117.7
+  best recall for this build: 0.9866
+
+[ivfpq] nlist=1024;m=10;nbits=8  build=17.6s size=21.8MB
+  nprobe=1     recall=0.2094 qps=  15857.2
+  nprobe=2     recall=0.2476 qps=  13067.0
+  nprobe=4     recall=0.2738 qps=   9734.8
+  nprobe=8     recall=0.2894 qps=   6540.2
+  nprobe=16    recall=0.2981 qps=   4013.6
+  nprobe=32    recall=0.3037 qps=   2298.7
+  nprobe=64    recall=0.3071 qps=   1261.3
+  nprobe=128   recall=0.3085 qps=    670.7
+  nprobe=256   recall=0.3091 qps=    342.3
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.3091
+
+[ivfpq] nlist=1024;m=20;nbits=8  build=20.7s size=33.7MB
+  nprobe=1     recall=0.3024 qps=  13322.0
+  nprobe=2     recall=0.3741 qps=  10715.0
+  nprobe=4     recall=0.4280 qps=   7798.6
+  nprobe=8     recall=0.4637 qps=   5132.9
+  nprobe=16    recall=0.4889 qps=   3088.3
+  nprobe=32    recall=0.5057 qps=   1750.0
+  nprobe=64    recall=0.5158 qps=    952.9
+  nprobe=128   recall=0.5228 qps=    504.8
+  nprobe=256   recall=0.5271 qps=    255.5
+  nprobe=512   recall=0.5289 qps=    124.1
+  nprobe=1024  recall=0.5292 qps=     58.6
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.5292
+
+[ivfpq] nlist=1024;m=50;nbits=8  build=16.1s size=69.2MB
+  nprobe=1     recall=0.3858 qps=  12103.5
+  nprobe=2     recall=0.5013 qps=   8268.4
+  nprobe=4     recall=0.5991 qps=   5145.4
+  nprobe=8     recall=0.6736 qps=   2975.6
+  nprobe=16    recall=0.7339 qps=   1642.9
+  nprobe=32    recall=0.7805 qps=    880.8
+  nprobe=64    recall=0.8170 qps=    454.4
+  nprobe=128   recall=0.8427 qps=    240.3
+  nprobe=256   recall=0.8583 qps=    120.0
+  nprobe=512   recall=0.8659 qps=     56.7
+  nprobe=1024  recall=0.8674 qps=     27.9
+  best recall for this build: 0.8674
+
+[ivfpq] nlist=4096;m=10;nbits=8  build=141.3s size=23.1MB
+  nprobe=1     recall=0.2004 qps=   9827.6
+  nprobe=2     recall=0.2427 qps=   9570.9
+  nprobe=4     recall=0.2723 qps=   8822.2
+  nprobe=8     recall=0.2905 qps=   7678.0
+  nprobe=16    recall=0.3028 qps=   6138.8
+  nprobe=32    recall=0.3103 qps=   4398.8
+  nprobe=64    recall=0.3161 qps=   2851.5
+  nprobe=128   recall=0.3194 qps=   1735.5
+  nprobe=256   recall=0.3206 qps=    983.3
+  nprobe=512   recall=0.3208 qps=    529.7
+  (recall plateaued, stopping sweep)
+  best recall for this build: 0.3208
+
+[ivfpq] nlist=4096;m=20;nbits=8  build=146.0s size=34.9MB
+  nprobe=1     recall=0.2691 qps=   9237.6
+  nprobe=2     recall=0.3434 qps=   8844.7
+  nprobe=4     recall=0.4030 qps=   7936.2
+  nprobe=8     recall=0.4460 qps=   6633.4
+  nprobe=16    recall=0.4766 qps=   5026.2
+  nprobe=32    recall=0.4977 qps=   3413.3
+  nprobe=64    recall=0.5141 qps=   2103.4
+  nprobe=128   recall=0.5253 qps=   1223.6
+  nprobe=256   recall=0.5336 qps=    671.7
+  nprobe=512   recall=0.5374 qps=    353.5
+  nprobe=1024  recall=0.5402 qps=    168.6
+  best recall for this build: 0.5402
+
+[ivfpq] nlist=4096;m=50;nbits=8  build=139.7s size=70.4MB
+  nprobe=1     recall=0.3187 qps=   9764.8
+  nprobe=2     recall=0.4268 qps=   8707.6
+  nprobe=4     recall=0.5270 qps=   7029.2
+  nprobe=8     recall=0.6087 qps=   5122.3
+  nprobe=16    recall=0.6765 qps=   3348.8
+  nprobe=32    recall=0.7299 qps=   1998.7
+  nprobe=64    recall=0.7744 qps=   1118.5
+  nprobe=128   recall=0.8109 qps=    603.5
+  nprobe=256   recall=0.8382 qps=    318.2
+  nprobe=512   recall=0.8561 qps=    159.8
+  nprobe=1024  recall=0.8675 qps=     80.7
+  best recall for this build: 0.8675
